@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KSKhromushinV2.Views.AddTaskPage"
+             Title="AddTaskPage">
+    <VerticalStackLayout Padding="10">
+        <Entry x:Name="TitleEntry" Placeholder="Название"/>
+        <Editor x:Name="DescriptionEditor" Placeholder="Описание"/>
+        <DatePicker x:Name="DueDatePicker" />
+        <Picker x:Name="PriorityPicker">
+            <Picker.Items>
+                <x:String>1 - Высокий</x:String>
+                <x:String>2 - Средний</x:String>
+                <x:String>3 - Низкий</x:String>
+            </Picker.Items>
+        </Picker>
+        <Button Text="Сохранить" Clicked="OnSave"/>
+    </VerticalStackLayout>
+</ContentPage>

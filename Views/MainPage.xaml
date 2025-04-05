@@ -1,0 +1,25 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:KSKhromushinV2.Views"
+             x:Class="KSKhromushinV2.Views.MainPage"
+             Title="Задачи">
+
+    <VerticalStackLayout Padding="10">
+        <Button Text="Добавить задачу" Clicked="OnAddTask"/>
+        <CollectionView x:Name="TasksView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" BackgroundColor="#eee" Margin="5" CornerRadius="10">
+                        <StackLayout>
+                            <Label Text="{Binding Title}" FontSize="20" FontAttributes="Bold"/>
+                            <Label Text="{Binding Description}" FontSize="14"/>
+                            <Label Text="{Binding DueDate, StringFormat='Срок: {0:dd.MM.yyyy HH:mm}'}" FontSize="12" TextColor="Gray"/>
+                            <Label Text="{Binding Priority, StringFormat='Приоритет: {0}'}" FontSize="12" TextColor="Gray"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+
+</ContentPage>
